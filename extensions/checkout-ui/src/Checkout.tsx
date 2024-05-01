@@ -70,9 +70,9 @@ useEffect(() => {
       <Form onSubmit={() => onCheckboxChange(hasGiftCard)} id="formGift">
         <InlineLayout columns={['81.5%', '10%']}>
         
-          <TextField name='giftcard' label="Gift card code" value={hasGiftCard} onChange={setHasGiftCard} error={statusError} />
+          <TextField name='giftcard' label="Gift card code" value={hasGiftCard} onChange={setHasGiftCard} error={statusError} onInput={setHasGiftCard}/>
           <View borderRadius="none" padding={['none', 'none', 'none', 'base']}>
-            <Button accessibilityRole='submit'>Apply</Button>
+            <Button accessibilityRole='submit' disabled={hasGiftCard.length>0 ? false : true}>Apply</Button>
           </View> 
         </InlineLayout>
       </Form>
